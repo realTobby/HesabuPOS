@@ -1,5 +1,5 @@
 ﻿using HesabuBackend.Models;
-using HesabuBackend.Models.Data;
+using HesabuPOS.MasterData.Models.Data;
 using Microsoft.Extensions.Options;
 using MongoDB.Driver;
 

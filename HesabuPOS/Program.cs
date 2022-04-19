@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HesabuPOS.MasterData.Models.Data;
+using System;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -7,15 +8,6 @@ using System.Threading.Tasks;
 
 namespace HesabuPOS
 {
-    public class ProductData
-    {
-        public string? _id { get; set; }
-        public int ProductID { get; set; }
-        public string ProductName { get; set; }
-        public string ProductDescription { get; set; }
-        public double ProductPrice { get; set; }
-
-    }
 
     internal class Program
     {
@@ -46,14 +38,14 @@ namespace HesabuPOS
         static async Task RunAsync()
         {
             // Update port # in the following line.
-            client.BaseAddress = new Uri("http://localhost:5000/");
+            client.BaseAddress = new Uri("http://localhost:5211/");
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(
                 new MediaTypeWithQualityHeaderValue("application/json"));
 
             try
             {
-                var products = await GetProductsAsync("Products");
+                var products = await GetProductsAsync("Products/list");
 
                 Console.WriteLine("Produkt Stammdaten:");
 

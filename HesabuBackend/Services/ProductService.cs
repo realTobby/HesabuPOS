@@ -1,5 +1,5 @@
 ﻿using HesabuBackend.Models;
-using HesabuBackend.Models.Data;
+using HesabuPOS.MasterData.Models.Data;
 using Microsoft.Extensions.Options;
 using MongoDB.Driver;
 
@@ -28,6 +28,21 @@ namespace HesabuBackend.Services
 
         public async Task<ProductData?> GetAsync(int id) =>
             await _productCollection.Find(x => x.ProductID == id).FirstOrDefaultAsync();
+
+        public async Task<ProductData> PostProduct(string name, string description, double price)
+        {
+            ProductData newProduct = new ProductData { ProductID = GetLatestProductID()+1, ProductName = name, ProductDescription = description, ProductPrice = price };
+            await _productCollection.InsertOneAsync(newProduct);
+            return newProduct;
+        }
+
+        public int GetLatestProductID()
+        {
+            int result = _productCollection.Find(_ => true).ToList().LastOrDefault().ProductID;
+            return result;
+        }
+
+
 
         public async Task CreateAsync(ProductData productData) =>
             await _productCollection.InsertOneAsync(productData);
