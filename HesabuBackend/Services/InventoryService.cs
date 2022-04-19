@@ -8,7 +8,7 @@ namespace HesabuBackend.Services
 {
     public class InventoryService
     {
-        private readonly IMongoCollection<InventoryData> _inventoryCollection;
+        private readonly IMongoCollection<StockData> _inventoryCollection;
 
         public InventoryService(
             IOptions<HesabuDatabaseSettings> hesabuPOSDatabaseSettings)
@@ -19,24 +19,24 @@ namespace HesabuBackend.Services
             var mongoDatabase = mongoClient.GetDatabase(
                 hesabuPOSDatabaseSettings.Value.DatabaseName);
 
-            _inventoryCollection = mongoDatabase.GetCollection<InventoryData>(
-                hesabuPOSDatabaseSettings.Value.InventoryCollectionName);
+            _inventoryCollection = mongoDatabase.GetCollection<StockData>(
+                hesabuPOSDatabaseSettings.Value.StocksCollectionName);
         }
 
-        public async Task<List<InventoryData>> GetAsync() =>
+        public async Task<List<StockData>> GetAsync() =>
             await _inventoryCollection.Find(_ => true).ToListAsync();
 
-        public async Task<InventoryData?> GetAsync(int id) =>
-            await _inventoryCollection.Find(x => x.InventoryID == id).FirstOrDefaultAsync();
+        public async Task<StockData?> GetAsync(int id) =>
+            await _inventoryCollection.Find(x => x.StockID == id).FirstOrDefaultAsync();
 
-        public async Task CreateAsync(InventoryData inventoryData) =>
+        public async Task CreateAsync(StockData inventoryData) =>
             await _inventoryCollection.InsertOneAsync(inventoryData);
 
-        public async Task UpdateAsync(int id, InventoryData inventoryData) =>
-            await _inventoryCollection.ReplaceOneAsync(x => x.InventoryID == id, inventoryData);
+        public async Task UpdateAsync(int id, StockData inventoryData) =>
+            await _inventoryCollection.ReplaceOneAsync(x => x.StockID == id, inventoryData);
 
         public async Task RemoveAsync(int id) =>
-            await _inventoryCollection.DeleteOneAsync(x => x.InventoryID == id);
+            await _inventoryCollection.DeleteOneAsync(x => x.StockID == id);
 
 
 

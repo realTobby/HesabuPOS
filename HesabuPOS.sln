@@ -7,6 +7,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HesabuPOS", "HesabuPOS\Hesa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HesabuBackend", "HesabuBackend\HesabuBackend.csproj", "{577DA5EE-629B-4863-8E75-D2E1F36743C4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HesabuPOS-Installer", "HesabuPOS-Installer\HesabuPOS-Installer.csproj", "{501AF6BD-DE88-45CD-BF46-91C011F710B0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HesabuPOS.MasterData", "HesabuPOS.MasterData\HesabuPOS.MasterData.csproj", "{9381CB9E-AE0D-4AC1-938D-542034DE1E0C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{577DA5EE-629B-4863-8E75-D2E1F36743C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{577DA5EE-629B-4863-8E75-D2E1F36743C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{577DA5EE-629B-4863-8E75-D2E1F36743C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{501AF6BD-DE88-45CD-BF46-91C011F710B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{501AF6BD-DE88-45CD-BF46-91C011F710B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{501AF6BD-DE88-45CD-BF46-91C011F710B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{501AF6BD-DE88-45CD-BF46-91C011F710B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9381CB9E-AE0D-4AC1-938D-542034DE1E0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9381CB9E-AE0D-4AC1-938D-542034DE1E0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9381CB9E-AE0D-4AC1-938D-542034DE1E0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9381CB9E-AE0D-4AC1-938D-542034DE1E0C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

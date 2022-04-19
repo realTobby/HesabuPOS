@@ -3,23 +3,19 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace HesabuBackend.Models.Data
 {
-    public class ProductData
+    public class StockData
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
         public string? _id { get; set; }
 
+        [BsonElement("StockID")]
+        public int StockID { get; set; }
         [BsonElement("ProductID")]
         public int ProductID { get; set; }
+        [BsonElement("ProductQuantity")]
+        public int ProductQuantity { get; set; }
 
-        [BsonElement("ProductName")]
-        public string ProductName { get; set; }
-
-        [BsonElement("ProductDescription")]
-        public string ProductDescription { get; set; }
-
-        [BsonElement("ProductPrice")]
-        public double ProductPrice { get; set; }
-
+        //public Product Product { get; set; }
     }
 }

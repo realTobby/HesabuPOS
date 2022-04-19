@@ -20,7 +20,7 @@ namespace HesabuBackend.Services
                 hesabuPOSDatabaseSettings.Value.DatabaseName);
 
             _productCollection = mongoDatabase.GetCollection<ProductData>(
-                hesabuPOSDatabaseSettings.Value.ProductCollectionName);
+                hesabuPOSDatabaseSettings.Value.ProductsCollectionName);
         }
 
         public async Task<List<ProductData>> GetAsync() =>

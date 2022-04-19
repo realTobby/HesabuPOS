@@ -53,7 +53,7 @@ namespace HesabuPOS
 
             try
             {
-                var products = await GetProductsAsync("Product");
+                var products = await GetProductsAsync("Products");
 
                 Console.WriteLine("Produkt Stammdaten:");
 

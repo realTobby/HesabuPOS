@@ -6,7 +6,7 @@
 
         public string DatabaseName { get; set; } = null!;
 
-        public string InventoryCollectionName { get; set; } = null!;
-        public string ProductCollectionName { get; set; } = null!;
+        public string StocksCollectionName { get; set; } = null!;
+        public string ProductsCollectionName { get; set; } = null!;
     }
 }

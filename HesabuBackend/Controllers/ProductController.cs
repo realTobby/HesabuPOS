@@ -5,7 +5,7 @@ using HesabuBackend.Models.Data;
 namespace HesabuBackend.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("products")]
     public class ProductController : ControllerBase
     {
         private readonly ProductService _productService;
