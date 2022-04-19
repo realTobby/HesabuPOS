@@ -57,5 +57,10 @@ namespace HesabuPOS_Storefront
             }
             return products;
         }
+
+        private void btn_refresh_products_Click(object sender, RoutedEventArgs e)
+        {
+            LoadProducts();
+        }
     }
 }

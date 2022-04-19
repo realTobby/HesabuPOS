@@ -7,14 +7,23 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <DockPanel VerticalAlignment="Top" HorizontalAlignment="Center">
+
+            <TextBlock Text="AWESOME ONLINE STORE" Margin="25,25,25,25" FontSize="30"/>
+
+            <Button x:Name="btn_refresh_products" Width="55" Height="19" Margin="5,5,5,5"  Content="Refresh" Click="btn_refresh_products_Click"/>
+
+        </DockPanel>
+        
+
         <ListBox Grid.Row="1"  ItemsSource="{Binding Products}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" HorizontalAlignment="Center" VerticalAlignment="Center">
             <ListBox.ItemContainerStyle>
                 <Style TargetType="ListBoxItem">
                     <Setter Property="ContextMenu">
                         <Setter.Value>
                             <ContextMenu>
-                                <MenuItem Header="Open Asset folder..."/>
-                                <MenuItem Header="Asset-Viewer" IsEnabled="False"/>
+                                <MenuItem Header="..."/>
+                                <MenuItem Header="..."/>
                             </ContextMenu>
                         </Setter.Value>
                     </Setter>
@@ -26,7 +35,11 @@
                         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
                             <TextBlock Text="{Binding Path=ProductName}" HorizontalAlignment="Center" Margin="15,15,15,15" FontWeight="Bold"/>
                             <Image Source="{Binding Path=ImageURL}" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Width="200" Height="200" Margin="15,15,15,15" />
-                            <TextBlock Text="{Binding Path=ProductDescription}" HorizontalAlignment="Center" Margin="15,15,15,15" FontWeight="Bold"/>
+                            <TextBlock Text="{Binding Path=ProductDescription}" HorizontalAlignment="Center" Margin="15,15,15,15"/>
+                            <TextBlock FontWeight="Bold" FontSize="20" HorizontalAlignment="Center" Margin="15,15,15,15">
+                                <Run Text="{Binding Path=ProductPrice}"/>
+                                <Run Text=" €"/>
+                            </TextBlock>
                         </StackPanel>
                     </Border>
                 </DataTemplate>
