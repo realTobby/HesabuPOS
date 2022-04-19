@@ -18,7 +18,7 @@ What I am working on:
 - Backend Controller to use for ProductsData
 - Keep MongoDB Clean
 - Installer Application that sets up the mongoDB
-- Application to test Backend Endpoints
+- Application to test Backend Endpoints (HesabuPOS-Storefront)
 
 Stuff thats needed in the future:
 - authentication
