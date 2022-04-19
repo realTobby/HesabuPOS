@@ -20,3 +20,8 @@ What I am working on:
 - Installer Application that sets up the mongoDB
 - Application to test Backend Endpoints
 
+Stuff thats needed in the future:
+- authentication
+- gateway service that routes the requests
+- un-coupled controllers (controller should live in its own project, and only get loaded by the aspnet service upon start)
+- (aspnet service should not have ANY controllers inside)
