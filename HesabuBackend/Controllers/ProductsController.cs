@@ -34,11 +34,12 @@ namespace HesabuBackend.Controllers
         }
 
         [HttpPost(EndpointRoutes.PostProduct)]
-        public ProductData PostProdcut([FromQuery(Name = "prodcut")] string productName,
-                                    [FromQuery(Name = "description")] string description,
-                                    [FromQuery(Name = "price")] double price)
+        public ProductData PostProdcut([FromQuery(Name = "productName")] string productName,
+                                    [FromQuery(Name = "productDescription")] string description,
+                                    [FromQuery(Name = "productPrice")] double price,
+                                    [FromQuery(Name = "prodcutImage")] string imageUrl)
         {
-            return _productService.PostProduct(productName, description, price).Result;
+            return _productService.PostProduct(productName, description, price, imageUrl).Result;
         }
     }
 }

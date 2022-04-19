@@ -29,9 +29,9 @@ namespace HesabuBackend.Services
         public async Task<ProductData?> GetAsync(int id) =>
             await _productCollection.Find(x => x.ProductID == id).FirstOrDefaultAsync();
 
-        public async Task<ProductData> PostProduct(string name, string description, double price)
+        public async Task<ProductData> PostProduct(string name, string description, double price, string imageUrl)
         {
-            ProductData newProduct = new ProductData { ProductID = GetLatestProductID()+1, ProductName = name, ProductDescription = description, ProductPrice = price };
+            ProductData newProduct = new ProductData { ProductID = GetLatestProductID()+1, ProductName = name, ProductDescription = description, ProductPrice = price, ImageURL = imageUrl };
             await _productCollection.InsertOneAsync(newProduct);
             return newProduct;
         }
