@@ -1,0 +1,37 @@
+﻿@page
+@model HesabuPOS.Webinterface.Pages.ProductsModel
+@{
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <td>Image</td>
+            <td>ID</td>
+            <td>Name</td>
+            <td>Description</td>
+            <td>Price</td>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Products) {
+        <tr>
+            <td>
+                <img width="140" height="140" src="@Html.DisplayFor(modelItem => item.ImageURL)"/>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductPrice)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
