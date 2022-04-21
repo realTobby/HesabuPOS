@@ -19,6 +19,7 @@ IN DEVELOPMENT, IN DEVELOPMENT, IN DEVELOPMENT, IN DEVELOPMENT, IN DEVELOPMENT, 
 Current Features:
 - Backend Server can [Get] and [Post] Product Data
 - Webinterface created, has a link to swagger for testing
+- Webinterface can list all current products inside the mongoDB
 
 What I am working on:
 - Backend Controller to use for ProductsData
