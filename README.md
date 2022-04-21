@@ -9,6 +9,10 @@ Tech-Stack:
 - Backend Server
 - Frontend Client
 
+Requirements:
+- .NET Framework 6.0 Runtime
+- Local MongoDB: https://www.mongodb.com/try/download/community
+
 IN DEVELOPMENT, IN DEVELOPMENT, IN DEVELOPMENT, IN DEVELOPMENT, IN DEVELOPMENT, IN DEVELOPMENT, IN DEVELOPMENT, IN DEVELOPMENT, IN DEVELOPMENT, IN DEVELOPMENT
 
 Current Features:
