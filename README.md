@@ -19,6 +19,7 @@ IN DEVELOPMENT, IN DEVELOPMENT, IN DEVELOPMENT, IN DEVELOPMENT, IN DEVELOPMENT, 
 Current Features:
 - Backend Server can [Get] and [Post] Product Data
 - Webinterface created, has a link to swagger for testing
+- Webinterface can list all current products inside the mongoDB
 
 What I am working on:
 - Backend Controller to use for ProductsData
@@ -32,3 +33,13 @@ Stuff thats needed in the future:
 - un-coupled controllers (controller should live in its own project, and only get loaded by the aspnet service upon start)
 - (aspnet service should not have ANY controllers inside)
 - security measures (not allowing anyone to make requests, and MUCH more)
+
+Workflow:
+- Install local mongoDB instance
+- Run the HesabuPOS-Installer once
+
+This will create the needed database with dummy data inside the needed collections
+- Run HesabuPOS-Webinterface
+
+This acts as the backend-Server and enables the user to access Data without any hassle
+
