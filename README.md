@@ -36,10 +36,10 @@ Stuff thats needed in the future:
 
 Workflow:
 - Install local mongoDB instance
-- Run the HasebuPOS-Installer once
+- Run the HesabuPOS-Installer once
 
 This will create the needed database with dummy data inside the needed collections
-- Run HasebuPOS.Webinterface
+- Run HesabuPOS-Webinterface
 
 This acts as the backend-Server and enables the user to access Data without any hassle
 
