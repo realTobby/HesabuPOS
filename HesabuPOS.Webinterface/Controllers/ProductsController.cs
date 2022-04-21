@@ -1,11 +1,10 @@
 using Microsoft.AspNetCore.Mvc;
 using HesabuPOS.Webinterface.Services;
-using HesabuPOS.MasterData.Models.Data;
+using HesabuPOS.MasterData.Models.Data.BaseData;
 
 namespace HesabuPOS.Webinterface.Controllers
 {
     [ApiController]
-    //[Route(EndpointRoutes.ProductsRoute)] ==> MAYBE NOT NEEDED!!!
     public class ProductsController : ControllerBase
     {
         private readonly ProductService _productService;

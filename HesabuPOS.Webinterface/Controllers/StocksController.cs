@@ -1,24 +1,23 @@
 using Microsoft.AspNetCore.Mvc;
 using HesabuPOS.Webinterface.Services;
-using HesabuPOS.MasterData.Models.Data;
+using HesabuPOS.MasterData.Models.Data.RuntimeData;
 
 namespace HesabuPOS.Webinterface.Controllers
 {
     [ApiController]
-    [Route("Stocks")]
     public class StocksController : ControllerBase
     {
-        private readonly InventoryService _inventoryService;
+        private readonly StocksService _stockService;
 
-        public StocksController(InventoryService serviceContext)
+        public StocksController(StocksService serviceContext)
         {
-            _inventoryService = serviceContext;
+            _stockService = serviceContext;
         }
 
-        [HttpGet]
-        public async Task<List<StockData>> GetInventory()
+        [HttpGet(EndpointRoutes.GetStocks)]
+        public async Task<List<StockData>> GetStocks()
         {
-            var result = await _inventoryService.GetAsync();
+            var result = await _stockService.GetAsync();
             return result;
         }
         

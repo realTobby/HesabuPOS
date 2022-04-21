@@ -1,7 +1,7 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
-namespace HesabuPOS.MasterData.Models.Data
+namespace HesabuPOS.MasterData.Models.Data.BaseData
 {
     public class ProductData
     {

@@ -1,4 +1,5 @@
-﻿using HesabuPOS.MasterData.Models.Data;
+﻿using HesabuPOS.MasterData.Models.Data.BaseData;
+using HesabuPOS.MasterData.Models.Data.RuntimeData;
 using HesabuPOS_Installer.ViewModels;
 using MongoDB.Driver;
 using System;
@@ -63,12 +64,22 @@ namespace HesabuPOS_Installer
 
                 var database = _mongoClient.GetDatabase("HesabuPOS");
 
-                // create dummy data to initialize mongodb Database and Collections
-                var productsCollection = database.GetCollection<ProductData>("Products");
-                productsCollection.InsertOne(new ProductData { ProductID = 0, ProductName = "Dummy Product", ProductDescription = "Dummy Description", ProductPrice = 0.00, ImageURL= "https://bbts1.azureedge.net/images/p/full/2021/09/34c206ee-2145-4b64-a745-8833c925a476.jpg" });
+                // create BaseData Collections
 
-                var inventoryCollection = database.GetCollection<StockData>("Stocks");
-                inventoryCollection.InsertOne(new StockData { StockID = 0, ProductID = 0, ProductQuantity = 0 });
+                // BaseData - Product
+                var productsCollection = database.GetCollection<ProductData>("Products");
+                productsCollection.InsertOne(new ProductData { ProductID = 0, ProductName = "Test Dummy", ProductDescription = "Dummy Description", ProductPrice = 4.20, ImageURL = "https://bbts1.azureedge.net/images/p/full/2021/09/34c206ee-2145-4b64-a745-8833c925a476.jpg" });
+
+                // BaseData - Storage
+                var storageCollection = database.GetCollection<StorageData>("Storages");
+                storageCollection.InsertOne(new StorageData { StorageID = 0, StorageName = "Dummy Storage", StorageContactPerson = "Person 1", StorageLocation = "Online" });
+
+                // create RuntimeData Collections
+
+                // RuntimeData - Stock
+                var stockCollection = database.GetCollection<StockData>("Stocks");
+                stockCollection.InsertOne(new StockData { StockID = 0, ProductID = 0, StorageID = 0, ProductQuantity = 99 });
+
                 InstallerViewModel.IsDatabaseInitialized = true;
             }
             else

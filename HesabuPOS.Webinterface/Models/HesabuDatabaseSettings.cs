@@ -8,5 +8,7 @@
 
         public string StocksCollectionName { get; set; } = null!;
         public string ProductsCollectionName { get; set; } = null!;
+
+        public string StoragesCollectionName { get; set; } = null!;
     }
 }

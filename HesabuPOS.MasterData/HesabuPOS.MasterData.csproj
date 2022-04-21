@@ -10,8 +10,4 @@
     <PackageReference Include="MongoDB.Bson" Version="2.15.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
-
 </Project>

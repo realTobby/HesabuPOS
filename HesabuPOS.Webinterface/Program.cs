@@ -11,7 +11,8 @@ builder.Services.Configure<HesabuDatabaseSettings>(
     builder.Configuration.GetSection("HesabuPOSDatabase"));
 
 builder.Services.AddSingleton<ProductService>();
-builder.Services.AddSingleton<InventoryService>();
+builder.Services.AddSingleton<StorageService>();
+builder.Services.AddSingleton<StocksService>();
 
 builder.Services.AddControllers()
     .AddJsonOptions(

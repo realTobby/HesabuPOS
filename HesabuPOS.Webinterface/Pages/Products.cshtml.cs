@@ -1,4 +1,4 @@
-using HesabuPOS.MasterData.Models.Data;
+using HesabuPOS.MasterData.Models.Data.BaseData;
 using HesabuPOS.Webinterface.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;

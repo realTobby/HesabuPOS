@@ -1,4 +1,4 @@
-﻿using HesabuPOS.MasterData.Models.Data;
+﻿using HesabuPOS.MasterData.Models.Data.BaseData;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
