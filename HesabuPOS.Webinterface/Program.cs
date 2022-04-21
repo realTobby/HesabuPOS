@@ -1,5 +1,6 @@
 using HesabuPOS.Webinterface.Models;
 using HesabuPOS.Webinterface.Services;
+using System.Net;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,8 +8,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.Configure<HesabuDatabaseSettings>(
     builder.Configuration.GetSection("HesabuPOSDatabase"));
 
-builder.Services.AddSingleton<InventoryService>();
 builder.Services.AddSingleton<ProductService>();
+builder.Services.AddSingleton<InventoryService>();
 
 builder.Services.AddControllers()
     .AddJsonOptions(
@@ -16,6 +17,12 @@ builder.Services.AddControllers()
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddHttpsRedirection(options =>
+{
+    options.RedirectStatusCode = (int)HttpStatusCode.TemporaryRedirect;
+    options.HttpsPort = 5001;
+});
 
 // Add services to the container.
 builder.Services.AddRazorPages();
@@ -36,11 +43,9 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
 app.UseRouting();
-
 app.UseAuthorization();
-
+app.MapControllers();
 app.MapRazorPages();
 
 app.Run();

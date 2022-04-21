@@ -65,7 +65,7 @@ namespace HesabuPOS_Installer
 
                 // create dummy data to initialize mongodb Database and Collections
                 var productsCollection = database.GetCollection<ProductData>("Products");
-                productsCollection.InsertOne(new ProductData { ProductID = 0, ProductName = "Dummy Product", ProductDescription = "Dummy Description", ProductPrice = 0.00 });
+                productsCollection.InsertOne(new ProductData { ProductID = 0, ProductName = "Dummy Product", ProductDescription = "Dummy Description", ProductPrice = 0.00, ImageURL= "https://bbts1.azureedge.net/images/p/full/2021/09/34c206ee-2145-4b64-a745-8833c925a476.jpg" });
 
                 var inventoryCollection = database.GetCollection<StockData>("Stocks");
                 inventoryCollection.InsertOne(new StockData { StockID = 0, ProductID = 0, ProductQuantity = 0 });

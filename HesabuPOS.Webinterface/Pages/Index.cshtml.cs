@@ -5,6 +5,8 @@ namespace HesabuPOS.Webinterface.Pages
 {
     public class IndexModel : PageModel
     {
+        public string Message { get; set; } = string.Empty;
+
         private readonly ILogger<IndexModel> _logger;
 
         public IndexModel(ILogger<IndexModel> logger)
@@ -14,7 +16,8 @@ namespace HesabuPOS.Webinterface.Pages
 
         public void OnGet()
         {
-
+            Message += $"{ DateTime.Now }";
         }
+
     }
 }
