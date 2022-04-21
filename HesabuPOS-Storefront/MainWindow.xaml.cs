@@ -36,7 +36,7 @@ namespace HesabuPOS_Storefront
 
         void InitConnection()
         {
-            client.BaseAddress = new Uri("http://localhost:5000/");
+            client.BaseAddress = new Uri("https://localhost:5098/");
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
         }
@@ -50,7 +50,7 @@ namespace HesabuPOS_Storefront
         async Task<List<ProductData>> GetProductsAsync()
         {
             List<ProductData> products = null;
-            HttpResponseMessage response = await client.GetAsync("Products/list");
+            HttpResponseMessage response = await client.GetAsync("products/list");
             if (response.IsSuccessStatusCode)
             {
                 products = await response.Content.ReadFromJsonAsync<List<ProductData>>();
