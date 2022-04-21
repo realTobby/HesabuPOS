@@ -32,3 +32,13 @@ Stuff thats needed in the future:
 - un-coupled controllers (controller should live in its own project, and only get loaded by the aspnet service upon start)
 - (aspnet service should not have ANY controllers inside)
 - security measures (not allowing anyone to make requests, and MUCH more)
+
+Workflow:
+- Install local mongoDB instance
+- Run the HasebuPOS-Installer once
+
+This will create the needed database with dummy data inside the needed collections
+- Run HasebuPOS.Webinterface
+
+This acts as the backend-Server and enables the user to access Data without any hassle
+
