@@ -1,8 +1,11 @@
 using HesabuPOS.Webinterface.Models;
 using HesabuPOS.Webinterface.Services;
+using Microsoft.Extensions.FileProviders;
 using System.Net;
 
 var builder = WebApplication.CreateBuilder(args);
+
+
 
 builder.Services.Configure<HesabuDatabaseSettings>(
     builder.Configuration.GetSection("HesabuPOSDatabase"));
@@ -31,12 +34,15 @@ builder.Services.AddRazorPages();
 //builder.Services.AddSharedServices();
 
 var app = builder.Build();
+app.UsePathBase("/HesabuPOS");
+
+app.UseSwagger();
+app.UseSwaggerUI();
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
+    
 
     //app.UseExceptionHandler("/Error");
     //// The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
@@ -50,5 +56,4 @@ app.UseRouting();
 app.UseAuthorization();
 app.MapControllers();
 app.MapRazorPages();
-
 app.Run();
