@@ -6,8 +6,9 @@ Tech-Stack:
 - ASP.NET CORE
 - .NET 6.0
 - MongoDB
+- SwaggerUI
 - Backend Server
-- Frontend Client
+- Webinterface (included in the backend, for easy data import and more information)
 
 Requirements:
 - .NET Framework 6.0 Runtime
@@ -16,7 +17,8 @@ Requirements:
 IN DEVELOPMENT, IN DEVELOPMENT, IN DEVELOPMENT, IN DEVELOPMENT, IN DEVELOPMENT, IN DEVELOPMENT, IN DEVELOPMENT, IN DEVELOPMENT, IN DEVELOPMENT, IN DEVELOPMENT
 
 Current Features:
-- literally nothing
+- Backend Server can [Get] and [Post] Product Data
+- Webinterface created, has a link to swagger for testing
 
 What I am working on:
 - Backend Controller to use for ProductsData
