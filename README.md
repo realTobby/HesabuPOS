@@ -7,7 +7,7 @@ Tech-Stack:
 - .NET 6.0
 - MongoDB
 - Backend Server
-- Frontend Client
+- Webinterface (included in the backend, for easy data import and more information)
 
 Requirements:
 - .NET Framework 6.0 Runtime
