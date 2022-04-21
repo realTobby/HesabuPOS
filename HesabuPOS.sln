@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32328.378
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HesabuBackend", "HesabuBackend\HesabuBackend.csproj", "{577DA5EE-629B-4863-8E75-D2E1F36743C4}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HesabuPOS-Installer", "HesabuPOS-Installer\HesabuPOS-Installer.csproj", "{501AF6BD-DE88-45CD-BF46-91C011F710B0}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HesabuPOS.MasterData", "HesabuPOS.MasterData\HesabuPOS.MasterData.csproj", "{9381CB9E-AE0D-4AC1-938D-542034DE1E0C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HesabuPOS-Storefront", "HesabuPOS-Storefront\HesabuPOS-Storefront.csproj", "{97618E27-BD43-44EE-A3C7-69747B22CE00}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HesabuPOS-Storefront", "HesabuPOS-Storefront\HesabuPOS-Storefront.csproj", "{97618E27-BD43-44EE-A3C7-69747B22CE00}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HesabuPOS.Webinterface", "HesabuPOS.Webinterface\HesabuPOS.Webinterface.csproj", "{526CD9C4-EA99-4E2D-83B5-DFA6D60E9FA9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{577DA5EE-629B-4863-8E75-D2E1F36743C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{577DA5EE-629B-4863-8E75-D2E1F36743C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{577DA5EE-629B-4863-8E75-D2E1F36743C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{577DA5EE-629B-4863-8E75-D2E1F36743C4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{501AF6BD-DE88-45CD-BF46-91C011F710B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{501AF6BD-DE88-45CD-BF46-91C011F710B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{501AF6BD-DE88-45CD-BF46-91C011F710B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -33,6 +29,10 @@ Global
 		{97618E27-BD43-44EE-A3C7-69747B22CE00}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{97618E27-BD43-44EE-A3C7-69747B22CE00}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{97618E27-BD43-44EE-A3C7-69747B22CE00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{526CD9C4-EA99-4E2D-83B5-DFA6D60E9FA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{526CD9C4-EA99-4E2D-83B5-DFA6D60E9FA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{526CD9C4-EA99-4E2D-83B5-DFA6D60E9FA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{526CD9C4-EA99-4E2D-83B5-DFA6D60E9FA9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
