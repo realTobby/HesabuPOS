@@ -2,7 +2,7 @@
 HesabuPOS aims to be an all-in-one POS.
 
 Tech-Stack:
-- C#
+- C# / HTML (& cshtml)
 - ASP.NET CORE
 - .NET 6.0
 - MongoDB
