@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HesabuPOS.MasterData", "Hes
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HesabuPOS-Storefront", "HesabuPOS-Storefront\HesabuPOS-Storefront.csproj", "{97618E27-BD43-44EE-A3C7-69747B22CE00}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HesabuPOS.Webinterface", "HesabuPOS.Webinterface\HesabuPOS.Webinterface.csproj", "{526CD9C4-EA99-4E2D-83B5-DFA6D60E9FA9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HesabuPOS.Webinterface", "HesabuPOS.Webinterface\HesabuPOS.Webinterface.csproj", "{526CD9C4-EA99-4E2D-83B5-DFA6D60E9FA9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

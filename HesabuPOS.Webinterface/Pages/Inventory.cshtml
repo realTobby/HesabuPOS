@@ -2,9 +2,48 @@
 @model HesabuPOS.Webinterface.Pages.InventoryModel
 @{
 }
-
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - HesabuPOS - Products</title>
+    <link rel="stylesheet" href="css/Products.css" asp-append-version="true" />
+</head>
 
 <h1>Inventory</h1>
 
-<p>Here you will be able to see the inventory of your products!</p>
-<p>Select a Storage and see current Stock!</p>
+<table class="productsTable table">
+    <thead>
+        <tr>
+            <td>StorageID</td>
+            <td>Name</td>
+            <td>Location</td>
+            <td>Contact Person</td>
+            <td>Image</td>
+            <td>Check Stock</td>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Storages) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.StorageID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StorageName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StorageLocation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StorageContactPerson)
+            </td>
+            <td>
+                <img width="140" height="140" src="@Html.DisplayFor(modelItem => item.ImageURL)"/>
+            </td>
+            <td>
+                <button>Open</button>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

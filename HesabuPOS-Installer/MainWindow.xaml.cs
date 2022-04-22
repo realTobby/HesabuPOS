@@ -66,19 +66,63 @@ namespace HesabuPOS_Installer
 
                 // create BaseData Collections
 
-                // BaseData - Product
-                var productsCollection = database.GetCollection<ProductData>("Products");
-                productsCollection.InsertOne(new ProductData { ProductID = 0, ProductName = "Test Dummy", ProductDescription = "Dummy Description", ProductPrice = 4.20, ImageURL = "https://bbts1.azureedge.net/images/p/full/2021/09/34c206ee-2145-4b64-a745-8833c925a476.jpg" });
+                // BaseData - Article
+                ArticleData dummyArticle = new ArticleData();
+                dummyArticle.ArticleNumber = "0000000";
+                dummyArticle.Price = 1.25;
+                dummyArticle.Name = "Dummy Product";
+                dummyArticle.ImageURL = "https://bbts1.azureedge.net/images/p/full/2021/09/34c206ee-2145-4b64-a745-8833c925a476.jpg";
+                dummyArticle.Description = "Dummy Description";
+
+                var articlesCollection = database.GetCollection<ArticleData>("Articles");
+                articlesCollection.InsertOne(dummyArticle);
+
+                //public string ArticleVariantNumber { get; set; }
+                //public string ArticleNumber { get; set; }
+                //public double ArticleVariantPrice { get; set; }
+                //public string ArticleVariantColor { get; set; }
+                //public string ArticleVariantSize { get; set; }
+
+                // BaseData - Article Variant
+                ArticleVariantData dummyVariant = new ArticleVariantData();
+                dummyVariant.ArticleVariantNumber = "0000000123457";
+                dummyVariant.ArticleNumber = "0000000";
+                dummyVariant.ArticleVariantPrice = 2.00;
+                dummyVariant.ArticleVariantColor = "yellow";
+                dummyVariant.ArticleVariantSize = "one size";
+
+                var variantsCollection = database.GetCollection<ArticleVariantData>("ArticleVariants");
+                variantsCollection.InsertOne(dummyVariant);
 
                 // BaseData - Storage
-                var storageCollection = database.GetCollection<StorageData>("Storages");
-                storageCollection.InsertOne(new StorageData { StorageID = 0, StorageName = "Dummy Storage", StorageContactPerson = "Person 1", StorageLocation = "Online" });
+                StorageData dummyStorage = new StorageData();
+                dummyStorage.StorageLocation = "Berlin";
+                dummyStorage.StorageName = "Awesome Online Store";
+                dummyStorage.StorageID = 0;
+                dummyStorage.StorageContactPerson = "Tobias Kattanek";
+                dummyStorage.ImageURL = "https://strawberrytours.com/wp-content/uploads/2019/09/Berlin_500x500-2.jpg";
+
+                var storagesCollection = database.GetCollection<StorageData>("Storages");
+                storagesCollection.InsertOne(dummyStorage);
 
                 // create RuntimeData Collections
 
                 // RuntimeData - Stock
-                var stockCollection = database.GetCollection<StockData>("Stocks");
-                stockCollection.InsertOne(new StockData { StockID = 0, ProductID = 0, StorageID = 0, ProductQuantity = 99 });
+
+                //public int StockID { get; set; }
+                //public int StorageID { get; set; }
+                //public int ArticleVariantNumber { get; set; }
+                //public int ProductQuantity { get; set; }
+
+                StockData dummyStock = new StockData();
+                dummyStock.StockID = 0;
+                dummyStock.StorageID = 0;
+                dummyStock.ArticleVariantNumber = dummyVariant.ArticleVariantNumber;
+                dummyStock.ElementString = $"(01){dummyVariant.ArticleVariantNumber}(21)123456";
+                dummyStock.ProductQuantity = 100;
+
+                var stocksCollection = database.GetCollection<StockData>("Stocks");
+                stocksCollection.InsertOne(dummyStock);
 
                 InstallerViewModel.IsDatabaseInitialized = true;
             }

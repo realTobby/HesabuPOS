@@ -1,0 +1,111 @@
+﻿@page
+@model HesabuPOS.Webinterface.Pages.ArticlesPageModel
+@{
+}
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - HesabuPOS - Products</title>
+    <link rel="stylesheet" href="css/Products.css" asp-append-version="true" />
+</head>
+
+<a asp-area="" asp-page="/ImportData">Add/Import Data</a>
+</br>
+@if(Model.UnifiedArticles.Count == 0)
+{
+    <a>Looks like there isnt any articles...</a>
+}else{
+    @foreach (var unified in Model.UnifiedArticles)
+{
+    <div style="border:2px solid black">
+        <table class="productsTable table">
+        <thead>
+            <tr>
+                <td>Delete</td>
+                <td>ArticleNumber</td>
+                <td>Name</td>
+                <td>Description</td>
+                <td>Price</td>
+                <td>Image</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <form method="post">
+                        <button asp-page-handler="Delete" asp-route-id="@unified.ArticleData.ArticleNumber" onclick="return confirm('Are you sure you want to delete Article @unified.ArticleData.ArticleNumber?')">Delete Article @unified.ArticleData.ArticleNumber</button>  
+                    </form>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => unified.ArticleData.ArticleNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => unified.ArticleData.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => unified.ArticleData.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => unified.ArticleData.Price)
+                </td>
+                <td>
+                    <img width="140" height="140" src="@Html.DisplayFor(modelItem => unified.ArticleData.ImageURL)"/>
+                </td>
+           </tr>
+           <tr>
+               <td>
+                   <button>Add Variant</button>
+               </td>
+               
+           </tr>
+                    @if(unified.Variants.Count > 0)
+                    {
+                        <tr>
+                        <td>
+                            <div style="border:2px solid black">
+                                <table class="productsTable table">
+                        <thead>
+                            <tr>
+                                <td>VariantNumber</td>
+                                <td>VariantColor</td>
+                                <td>VariantSize</td>
+                                <td>VariantPrice</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var variant in unified.Variants)
+                            {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => variant.ArticleVariantNumber)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => variant.ArticleVariantColor)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => variant.ArticleVariantSize)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => variant.ArticleVariantPrice)
+                                </td>
+                            </tr>
+                            }
+                        </tbody>
+                    </table>
+</div>
+<br />
+                            
+                    </td>
+            </tr>
+                   }
+                    
+            
+        </tbody>
+    </table>
+    </div>
+    <br />
+    
+}
+}
+

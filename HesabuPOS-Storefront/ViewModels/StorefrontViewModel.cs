@@ -20,9 +20,9 @@ namespace HesabuPOS_Storefront.ViewModels
 
         private string _windowTitle = "HesabuPOS-Storefront";
 
-        private ObservableCollection<ProductData> _products;
+        private ObservableCollection<ArticleData> _products;
 
-        public ObservableCollection<ProductData> Products
+        public ObservableCollection<ArticleData> Products
         {
             get { return _products; }
             set

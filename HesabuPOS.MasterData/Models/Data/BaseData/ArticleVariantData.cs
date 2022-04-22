@@ -8,16 +8,15 @@ using System.Threading.Tasks;
 
 namespace HesabuPOS.MasterData.Models.Data.BaseData
 {
-    public class StorageData
+    public class ArticleVariantData
     {
         [BsonId]
         [BsonElement("_id")]
         public ObjectId ObjectID { get; set; }
-        public int StorageID { get; set; }
-        public string StorageName { get; set; }
-        public string StorageLocation { get; set; }
-        public string StorageContactPerson { get; set; }
-        public string ImageURL { get; set; }
-
+        public string ArticleVariantNumber { get; set; }
+        public string ArticleNumber { get; set; }
+        public double ArticleVariantPrice { get; set; }
+        public string ArticleVariantColor { get; set; }
+        public string ArticleVariantSize { get; set; }
     }
 }

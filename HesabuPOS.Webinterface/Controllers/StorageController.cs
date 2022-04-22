@@ -14,7 +14,7 @@ namespace HesabuPOS.Webinterface.Controllers
             _storageService = serviceContext;
         }
 
-        [HttpGet(EndpointRoutes.GetStorages)]
+        [HttpGet(EndpointRoutes.StoragesRoute)]
         public async Task<List<StorageData>> GetStorages()
         {
             var result = await _storageService.GetAsync();

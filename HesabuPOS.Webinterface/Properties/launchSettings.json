@@ -3,7 +3,7 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "https://localhost:22186",
+      "applicationUrl": "https://192.168.178.135:22186",
       "sslPort": 44332
     }
   },
@@ -12,8 +12,8 @@
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,
-      "launchUrl": "https://localhost:5098",
-      "applicationUrl": "https://localhost:7098;https://localhost:5098",
+      "launchUrl": "https://192.168.178.135:5098",
+      "applicationUrl": "https://192.168.178.135:7098;https://192.168.178.135:5098",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "HesabuPOS-Development"
       }
@@ -21,7 +21,7 @@
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
-      "launchUrl": "https://localhost:5098",
+      "launchUrl": "https://192.168.178.135:5098",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "IIS-Development"
       }

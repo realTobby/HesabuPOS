@@ -10,9 +10,10 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.Configure<HesabuDatabaseSettings>(
     builder.Configuration.GetSection("HesabuPOSDatabase"));
 
-builder.Services.AddSingleton<ProductService>();
+builder.Services.AddSingleton<ArticleService>();
 builder.Services.AddSingleton<StorageService>();
 builder.Services.AddSingleton<StocksService>();
+builder.Services.AddSingleton<VariantService>();
 
 builder.Services.AddControllers()
     .AddJsonOptions(

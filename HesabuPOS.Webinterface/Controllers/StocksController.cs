@@ -14,7 +14,7 @@ namespace HesabuPOS.Webinterface.Controllers
             _stockService = serviceContext;
         }
 
-        [HttpGet(EndpointRoutes.GetStocks)]
+        [HttpGet(EndpointRoutes.StocksRoute)]
         public async Task<List<StockData>> GetStocks()
         {
             var result = await _stockService.GetAsync();

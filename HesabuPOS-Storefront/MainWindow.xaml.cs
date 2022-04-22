@@ -44,16 +44,16 @@ namespace HesabuPOS_Storefront
         async void LoadProducts()
         {
             var result = await GetProductsAsync();
-            _viewModel.Products = new ObservableCollection<ProductData>(result);
+            _viewModel.Products = new ObservableCollection<ArticleData>(result);
         }
 
-        async Task<List<ProductData>> GetProductsAsync()
+        async Task<List<ArticleData>> GetProductsAsync()
         {
-            List<ProductData> products = null;
+            List<ArticleData> products = null;
             HttpResponseMessage response = await client.GetAsync("products/list");
             if (response.IsSuccessStatusCode)
             {
-                products = await response.Content.ReadFromJsonAsync<List<ProductData>>();
+                products = await response.Content.ReadFromJsonAsync<List<ArticleData>>();
             }
             return products;
         }

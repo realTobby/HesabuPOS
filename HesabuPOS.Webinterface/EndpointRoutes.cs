@@ -2,24 +2,25 @@
 {
     public static class EndpointRoutes
     {
-        #region Products
+        #region Articles
 
-        public const string ProductsRoute = "products";
+        public const string ArticlesRoute = "articles";
 
-        public const string GetProducts = ProductsRoute + "/list";
+        public const string GetArticleByID = ArticlesRoute + "/{articleNumber}";
 
-        public const string GetProductByID = ProductsRoute + "/{id}";
+        public const string PostArticle = ArticlesRoute + "/post";
 
-        public const string PostProduct = ProductsRoute + "/post";
+        public const string PostArticleViaImport = ArticlesRoute + "/import";
+
+        public const string DeleteArticleByID = ArticlesRoute + "/delete/{articleNumber}";
+
         #endregion
 
         #region Storages
 
         public const string StoragesRoute = "storages";
 
-        public const string GetStorages = StoragesRoute + "/list";
-
-        public const string GetStorageByID = StoragesRoute + "/{id}";
+        public const string GetStorageByID = StoragesRoute + "/{storageID}";
 
         #endregion
 
@@ -27,12 +28,20 @@
 
         public const string StocksRoute = "stocks";
 
-        public const string GetStocks = StocksRoute + "/list";
-
-        public const string GetStocksByStorageID = StocksRoute + "/{id}";
+        public const string GetStocksByStorageID = StocksRoute + "/{storageID}";
 
 
         #endregion
 
+
+        #region Article Variants
+
+        public const string ArticleVariantsRoute = "articlevariants";
+
+        public const string GetArticleVariantByID = ArticleVariantsRoute + "/{variantNumber}";
+
+        public const string PostArticleVariant = ArticleVariantsRoute + "/post";
+
+        #endregion
     }
 }

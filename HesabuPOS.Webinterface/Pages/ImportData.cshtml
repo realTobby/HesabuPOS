@@ -1,0 +1,49 @@
+﻿@page
+@model HesabuPOS.Webinterface.Pages.ImportDataModel
+@{
+}
+
+<h2>Adding/Importing Data</h2>
+
+<form id="form1" method="post" action="@EndpointRoutes.PostArticleViaImport" 
+    enctype="application/x-www-form-urlencoded">
+    <div>
+        <label for="articleNumber">Article Number</label>
+    </div>
+    <div>
+        <input name="articleNumber" type="text" />
+    </div>
+
+    <div>
+        <label for="articleName">Article Name</label>
+    </div>
+    <div>
+        <input name="articleName" type="text" />
+    </div>
+
+    <div>
+        <label for="articleDescription">Article Description</label>
+    </div>
+    <div>
+        <input name="articleDescription" type="text" />
+    </div>
+
+    <div>
+        <label for="articlePrice">Article Price (Decimal as .)</label>
+    </div>
+    <div>
+        <input name="articlePrice" type="text" />
+    </div>
+
+    <div>
+        <label for="articleImageURL">Article Image</label>
+    </div>
+    <div>
+        <input name="articleImageURL" type="text" />
+    </div>
+
+    </br>
+    <div>
+        <input type="submit" value="Add Article" />
+    </div>
+</form>
