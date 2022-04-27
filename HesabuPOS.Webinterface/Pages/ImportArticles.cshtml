@@ -1,9 +1,13 @@
 ﻿@page
-@model HesabuPOS.Webinterface.Pages.ImportDataModel
+@model HesabuPOS.Webinterface.Pages.ImportArticles
 @{
 }
 
 <h2>Adding/Importing Data</h2>
+
+<button>Upload .CSV</button>
+
+<br/>
 
 <form id="form1" method="post" action="@EndpointRoutes.PostArticleViaImport" 
     enctype="application/x-www-form-urlencoded">

@@ -3,10 +3,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace HesabuPOS.Webinterface.Pages
 {
-    public class ImportDataModel : PageModel
+    public class ImportArticles : PageModel
     {
-        public void OnGet()
-        {
-        }
     }
 }

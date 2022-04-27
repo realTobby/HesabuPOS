@@ -1,0 +1,76 @@
+﻿@page
+
+@inject IJSRuntime JS
+
+@using Microsoft.AspNetCore.Components
+@using Microsoft.JSInterop
+@model HesabuPOS.Webinterface.Pages.IncomingGoodsModel
+@{
+
+  
+	
+}
+
+<head>
+
+</head>
+
+
+<body>
+
+
+	<h1>Incoming Goods</h1>
+
+	<br/>
+
+	<a>Sending Storage: </a>
+	<select name="SendingStorages" id="sendingStorages" asp-items="@Model.StoragesDropdownItems">
+		<option value="notChosen">Choose Storage...</option>
+		<option value="External">External</option>
+	</select>
+
+	<br/>
+
+	<a>Receiving Storage: </a>
+	<select name="ReceivingStorages" id="receivingStorages" asp-items="@Model.StoragesDropdownItems" >
+	  <option value="notChosen">Choose Storage...</option>
+		<option value="External">External</option>
+	</select>
+
+	<br/>
+	
+	<a>Article: </a>
+	<select onchange=@DoStuff name="Articles" id="articles" asp-for="@Model.SelectedArticleTag" asp-items="@Model.ArticlesDropdownItems">
+		<option value="notChosen">Choose Article...</option>
+	</select>
+
+	<br/>
+
+	<a>Article Variant: </a>
+	<select name="ArticleVariants" id="variants" asp-items="@Model.ArticleVariantsDropdownItems">
+		<option value="notChosen">Choose Variant...</option>
+	</select>
+
+	<br/>
+
+	<a>Quantity: </a>
+	<input/>
+
+	<br/>
+	<br/>
+
+	<button>Send Goods</button>
+
+
+</body>
+
+
+@functions {
+    string selectedString = "Maui";
+
+    void DoStuff(ChangeEventArgs e)
+    {
+        selectedString = e.Value.ToString();
+        Console.WriteLine("It is definitely: " + selectedString);
+    }
+}

@@ -5,19 +5,12 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace HesabuPOS.Webinterface.Pages
 {
-    public class UnifiedArticle
-    {
-        public ArticleData ArticleData { get; set; }
-        public List<ArticleVariantData> Variants { get; set; }
-    }
-
     public class ArticlesPageModel : PageModel
     {
         private readonly ArticleService _articleService;
         private readonly VariantService _variantService;
 
         public List<UnifiedArticle> UnifiedArticles;
-
 
         private readonly ILogger<IndexModel> _logger;
 
